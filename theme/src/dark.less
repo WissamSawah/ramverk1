@@ -1,0 +1,164 @@
+/*!
+ * Stylesheet for design kmom04_dark.
+ *
+ * This stylesheet is for the design course and kmom04 where we use LESS.
+
+ */
+
+
+
+@import "normalize.css/normalize.less";
+
+
+
+
+
+/**
+ * Font Awesome.
+ */
+
+@import "@fortawesome/fontawesome-free/less/fontawesome.less";
+@import "@fortawesome/fontawesome-free/less/solid.less";
+@import "@fortawesome/fontawesome-free/less/brands.less";
+
+
+
+
+
+/**
+ * Internal self contained modules, save in directory module/.
+ */
+
+
+//@import "module/kmom01.less";
+
+
+@import "@desinax/responsive-menu/less/responsive-menu.less";
+@import "@desinax/responsive-menu/less/media-queries.less";
+
+
+/**
+ * Import the typographic grid.
+ */
+@import "@desinax/typographic-grid/less/typography-font-families.less";
+@import "@desinax/typographic-grid/less/typography-defaults.less";
+
+
+
+// Show the grid
+.hgrid .inner-wrap {
+    @gridImage: "../img/magic-number-@{magicNumber}.png";
+    #desinax-hgrid.showGrid(@gridImage);
+}
+
+
+
+
+
+/**
+ * Base style to affect HTML elements on a general scale.
+ */
+@import "base/base2.less";
+// @import "base/base.less";
+
+
+
+
+
+
+/**
+ * Import the vertical grid.
+ */
+@import "@desinax/vertical-grid/less/grid.less";
+
+
+
+// Default grid, change to fit your requirements.
+// @columnWidth:   30;
+// @gutterWidth:   10;
+// @columns:       24;
+// @gridType:      "float"; // "flex"
+
+
+
+/**
+ * Layout style for general structure of header, navbar, main, footer
+ * and other regions of the page including route specific styles.
+ */
+
+// @import "layout/layout.less";
+// @import "layout/layout_kmom02.less";
+@import "layout/vgrid.less";
+@import "layout/responsive.less";
+// @import "layout/regions.less";     // To add style for ?regions
+
+
+/**
+* Figure and figcaption for images and other media using figure/figcaption
+*/
+@import "@desinax/figure/less/asciinema.less";
+@import "@desinax/figure/less/codepen.less";
+@import "@desinax/figure/less/figure.less";
+
+// Enable style from the module and optinally add customized layout
+figure.figure {
+   #desinax-figure.figure();
+}
+
+figure.asciinema {
+   &:extend(figure.figure);
+   #desinax-figure.asciinema();
+}
+
+figure.codepen,
+figure.figure-codepen {
+   &:extend(figure.figure);
+   #desinax-figure.codepen();
+}
+
+
+
+
+
+
+
+/**
+ * A responsive menu.
+ */
+ @import "@desinax/responsive-menu/less/responsive-menu.less";
+ @import "@desinax/responsive-menu/less/media-queries.less";
+ @import url('https://fonts.googleapis.com/css?family=Bree+Serif|Comfortaa|Domine|Fjalla+One|Montserrat|Raleway|Robot+Condensed');
+
+
+/**
+ * My own settings, not currently in their own module.
+ */
+
+ // @innerWidth: auto;
+
+ // My font-families
+ @fontFamilyHeadings: 'Domine', serif;
+ @fontFamilyBody:     'Roboto Condensed', sans-serif;
+ @fontFamilyCode:     @fontFamilyCourier;
+
+
+ @magicNumber: 24px;
+ @fontSizeBody: 16px;
+
+
+ @headerBg: linear-gradient(195deg,#2A2C2B,#B29127);
+ @borderColor: #fff;
+ @bgColorBody: #2A2C2B;
+ @colorBody: #ccc;
+ @linkColor: #B29127;
+ @bgColorCodeInline: #5f5127;
+ @temaColor: #70602e;
+ @h4Col: #333;
+ @maxBgColor: #70602e;
+ @strongColor: #6c5c31;
+ @strongColor2: #fff;
+ @maxButtonClickedColor: #333;
+ @logoColor: #ccc;
+ @colorH1BorderBottom: #B29127;
+ @colorH4BorderBottom: #B29127;
+ @h1Color: #B29127;
