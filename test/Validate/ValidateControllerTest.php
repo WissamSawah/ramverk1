@@ -1,6 +1,6 @@
 <?php
 
-namespace Anax\Controller;
+namespace Aisa\Validate;
 
 use Anax\DI\DIFactoryConfig;
 use PHPUnit\Framework\TestCase;
@@ -8,9 +8,9 @@ use PHPUnit\Framework\TestCase;
 /**
  * Test the FlatFileContentController.
  */
-class FlatFileContentControllerTest extends TestCase
+class ValidateControllerTest extends TestCase
 {
-    
+
     // Create the di container.
     protected $di;
     protected $controller;
@@ -28,30 +28,30 @@ class FlatFileContentControllerTest extends TestCase
         $this->di = new DIFactoryConfig();
         $this->di->loadServices(ANAX_INSTALL_PATH . "/config/di");
 
-        // Use a different cache dir for unit test
-        $this->di->get("cache")->setPath(ANAX_INSTALL_PATH . "/test/cache");
-
-        // View helpers uses the global $di so it needs its value
         $di = $this->di;
 
         // Setup the controller
-        $this->controller = new FlatFileContentController();
+        $this->controller = new ValidateController();
         $this->controller->setDI($this->di);
         //$this->controller->initialize();
     }
-
-
 
     /**
      * Test the route "index".
      */
     public function testIndexAction()
     {
-        $res = $this->controller->catchAll();
-        $this->assertInstanceOf("\Anax\Response\Response", $res);
+        $res = $this->controller->indexAction();
+        $this->assertInternalType("object", $res);
+    }
 
-        $body = $res->getBody();
-        $exp = "| ramverk1</title>";
-        $this->assertContains($exp, $body);
+        /**
+     * Test the route "dump-di".
+     */
+    public function testGetProtocolResultTrue()
+    {
+        $object = new ValidateIp();
+        $res = $this->controller->Result("186.151.62.176", $object);
+        $this->assertInternalType("string", $res);
     }
 }

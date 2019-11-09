@@ -12,7 +12,7 @@
 @basicColor: #fff;
 @fontColor: #ccc;
 @fontColor21: #ccc;
-@fontColor2: #ccc;
+@fontColor2: #41561F;
 @h4Col: #ccc;
 @temaColor: #384952;
 @headerBg: linear-gradient(to right,#384952,#384952);
@@ -53,6 +53,20 @@ h1{
  // }
 
 
+.jumbotron {
+    width: 50%;
+
+background: #695b29;
+
+text-align: center;
+
+margin-left: 9rem;
+
+padding: 10px;
+
+border-radius: 20px 100px;
+}
+
 
 .inner-wrap {
      #desinax-vgrid.grid(1100px);
@@ -82,21 +96,33 @@ img.thumb {
     //max-width: 100%;
 }
 
+.ip {
+    text-align: center;
+}
+
+input {
+    width: 200px;
+    padding: 6px;
+    text-align: center;
+    border-radius: 4px;
+}
+
 .pl1,
 .pl2 {
     color: #fff;
-    background-color: #63562a;
-    background-image: linear-gradient(#6d5d2a, #52492a);
-    border-color: #5a502a;
+    background-color: #41561F;
+    background-image: linear-gradient(#41561F, #264234);
+    border-color: #41561F;
     padding: 9px;
     border-radius: 5%;
     width: 50%;
+    margin: 20px;
 }
 
 .pl1:hover,
 .pl2:hover {
-    background-color: #332e1f;
-    background-image: linear-gradient(#332e1f, #52492a);
+    background-color: #41561F;
+    background-image: linear-gradient(#41561F, #41561F);
     cursor: pointer;
 
 }
@@ -467,13 +493,22 @@ strong {
 
 
 .footer-column-wrapper {
-    color: @fontColor2;
+    color: #ccc;
     // padding-bottom: 195px;
     border-bottom: 1px solid #666;
 }
 
+.codey {
+    margin-bottom: 50px;
+}
+
+.jsonc {
+    margin-bottom: 50px;
+    // padding: 13px;
+}
+
 .site-footer {
-    color: @fontColor2;
+    color: #ccc;
     text-align: center;
     #desinax-vgrid.column(@columns);
     // padding-top: 25px;
@@ -501,10 +536,9 @@ strong {
 
 
 
-  /* Hide responsive/mobile menu, leave this to kmom02 */
-  // .rm-desktop ul {
-  //     display: inherit;
-  // }
+  .rm-desktop ul {
+      background-color: #1A201D;
+  }
 
  // /* Hide responsive/mobile menu, leave this to kmom02 */
  // .rm-navbar-max {
@@ -513,7 +547,7 @@ strong {
 
 .rm-max .rm-small {
      display: inherit;
-     color: @borderColor;
+     color: #ccc;
 }
 
 .rm-max .rm-navbar {

@@ -6038,7 +6038,7 @@ a.rm-button.rm-clicked .rm-button-face-2 {
 }
 .rm-default li li {
   display: block;
-  min-width: 10em;
+  min-width: 0em;
 }
 .rm-default a {
   display: block;
