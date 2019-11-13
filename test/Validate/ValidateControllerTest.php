@@ -54,4 +54,10 @@ class ValidateControllerTest extends TestCase
         $res = $this->controller->Result("186.151.62.176", $object);
         $this->assertInternalType("string", $res);
     }
+    public function testGetProtocolResultFalse()
+    {
+        $object = new ValidateIp();
+        $res = $this->controller->Result("186.151.62", $object);
+        $this->assertInternalType("string", $res);
+    }
 }

@@ -55,4 +55,23 @@ class ValidateIP implements ContainerInjectableInterface
         }
         return "Not valid";
     }
+
+    public function getCurrentIp()
+    {
+        return $_SERVER["REMOTE_ADDR"] ?? '127.0.0.1';
+    }
+
+
+    public function getDetails($ipAddress)
+    {
+        $myAccessKey = "f4aa2f66f64e88b2c11dff48b875f7ba";
+        $BaseUrl = "http://api.ipstack.com/";
+        $req = curl_init($BaseUrl . $ipAddress . "?access_key=" . $myAccessKey . '');
+        curl_setopt($req, CURLOPT_RETURNTRANSFER, true);
+        $json = curl_exec($req);
+        curl_close($req);
+        $result = json_decode($json, JSON_PRETTY_PRINT);
+        $result["map_link"] = "https://www.openstreetmap.org/#map=13/{$result['latitude']}/{$result['longitude']}";
+        return $result;
+    }
 }

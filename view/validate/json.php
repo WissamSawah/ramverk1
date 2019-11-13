@@ -1,12 +1,16 @@
 <h1>Validate IP address {JSON}</h1>
 
-<form class="form-signin" method="get">
-    <div >
-            <input type="text" name="ip" placeholder="Your IP" required>
-    </div>
-    <button class="pl1"  type="submit">Validate</button>
+<?php if (!isset($_GET["ip"])) : ?>
+    <form method="get" action="">
+        <div>
+                <input type="text" name="ip" value="<?=$ip?>" required>
+        </div>
+        <div  role="onchange">
+          Your IP address will be set by default
+        </div>
+        <button class="pl1" type="submit">Validate</button>
+<?php endif; ?>
 </form>
-
     <h4> Test routes </h4>
 
     <p>My Home IP-address{JSON}</p>
@@ -19,7 +23,6 @@
     <p><a href="?ip=108.174.10.10">108.174.10.10</a></p>
     <p>BTH IP-address{JSON}</p>
     <p><a href="?ip=213.52.129.125">213.52.129.125</a></p>
-
 
 
     <h4>Result In JSON</h4>

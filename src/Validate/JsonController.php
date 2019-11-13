@@ -37,8 +37,13 @@ class JsonController extends ValidateController implements ContainerInjectableIn
         $json = null;
         $this->ipAddress = $request->getGet("ip");
         $this->object = new ValidateIP();
-        $json = $this->IpJson($this->ipAddress, $this->object);
-        $data['json'] = $json;
+
+        $json = $this->object->getDetails($this->ipAddress, $this->object);
+        $ip = $this->object->getCurrentIp();
+        $data["json"] = $json;
+        $data["ip"] = $ip;
+
+
         $page->add("validate/json", $data);
         return $page->render([
             "title" => $title,
@@ -50,13 +55,15 @@ class JsonController extends ValidateController implements ContainerInjectableIn
      *
      * @return array
      */
-    public function IpJson($ipAddress, $object) : array
-    {
-        $json = [
-            "Ip" => $ipAddress,
-            "Protocol" => $object->getProtocol($ipAddress) ?? null,
-            "Domain" => $object->getDomain($ipAddress) ?? null,
-        ];
-        return [$json];
-    }
+    // public function IpJson($ipAddress, $object) : array
+    // {
+    //     $json = [
+    //         "Ip" => $ipAddress,
+    //         "Protocol" => $object->getProtocol($ipAddress) ?? null,
+    //         "Domain" => $object->getDomain($ipAddress) ?? null,
+    //         "details" => $object->getDetails($ipAddress) ?? null,
+    //
+    //     ];
+    //     return [$json];
+    // }
 }

@@ -55,19 +55,26 @@ class ValidateController implements ContainerInjectableInterface
      */
     public function indexAction() : object
     {
-        $protocol =  null;
-        $host = null;
+        $protocol;
+        $host;
+        $details;
         $title = "Ip validator";
         $page = $this->di->get("page");
         $request = $this->di->get("request");
         $this->ipAddress = $request->getGet("ip");
+        $ip = $this->ipAddress;
 
         $this->object = new ValidateIP();
         $protocol = $this->Result($this->ipAddress, $this->object);
         $host = $this->object->getDomain($this->ipAddress);
-
+        $details = $this->object->getDetails($this->ipAddress);
+        $ip = $this->object->getCurrentIp();
+        $data["ip"] = $ip;
         $data["protocol"] = $protocol;
         $data["host"] = $host;
+        $data["details"] = $details;
+
+
         $page->add("validate/index", $data);
         return $page->render([
             "title" => $title,
