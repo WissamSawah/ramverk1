@@ -2,6 +2,7 @@
 
 namespace Aisa\Validate;
 
+
 use Anax\Commons\ContainerInjectableInterface;
 use Anax\Commons\ContainerInjectableTrait;
 
@@ -21,6 +22,15 @@ use Anax\Commons\ContainerInjectableTrait;
 class ValidateIP implements ContainerInjectableInterface
 {
     use ContainerInjectableTrait;
+
+
+    protected $apiKey;
+    public function __construct()
+    {
+        $apiKeys = require ANAX_INSTALL_PATH . "/config/apiKeys.php";
+        $this->apiKey = $apiKeys["ipstack"];
+    }
+
 
     /**
      * Check if IP is valid or not.
@@ -64,9 +74,8 @@ class ValidateIP implements ContainerInjectableInterface
 
     public function getDetails($ipAddress)
     {
-        $myAccessKey = "f4aa2f66f64e88b2c11dff48b875f7ba";
         $BaseUrl = "http://api.ipstack.com/";
-        $req = curl_init($BaseUrl . $ipAddress . "?access_key=" . $myAccessKey . '');
+        $req = curl_init($BaseUrl . $ipAddress . "?access_key=" . $this->apiKey . '');
         curl_setopt($req, CURLOPT_RETURNTRANSFER, true);
         $json = curl_exec($req);
         curl_close($req);

@@ -53,6 +53,25 @@ return [
             ],
         ],
         [
+            "text" => "Weather",
+            "url" => "docu",
+            "title" => "Doc to get Weather.",
+            "submenu" => [
+                "items" => [
+                    [
+                        "text" => "Weather",
+                        "url" => "weather",
+                        "title" => "Enter an IP to get Weather.",
+                    ],
+                    [
+                        "text" => "Weather-JSON",
+                        "url" => "weatherjson",
+                        "title" => "Get info in JSON.",
+                    ],
+                ],
+            ],
+        ],
+        [
             "text" => "Om",
             "url" => "om",
             "title" => "Om denna webbplats.",
