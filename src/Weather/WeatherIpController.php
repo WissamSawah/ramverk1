@@ -59,7 +59,7 @@ class WeatherIpController implements ContainerInjectableInterface
         $data["details"] = $details;
         $data["weather"] = $weather;
         $data["currentIp"] = $currentIp;
-        $page->add("weather/index", $data);
+        $page->add("index2", $data);
         return $page->render([
             "title" => $title,
         ]);

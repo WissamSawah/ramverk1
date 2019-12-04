@@ -58,7 +58,7 @@ class JsonWeather extends WeatherIpController implements ContainerInjectableInte
         $data["details"] = $details;
         $data["weather"] = $weather;
         $data["currentIp"] = $currentIp;
-        $page->add("weather/weatherjson", $data);
+        $page->add("weatherjson", $data);
         return $page->render([
             "title" => $title,
         ]);
