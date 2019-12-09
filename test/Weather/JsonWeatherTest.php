@@ -57,7 +57,4 @@ class JsonWeatherTest extends TestCase
         $exp = '"Europe\/Dublin"';
         $this->assertContains($exp, $json);
     }
-
-
-    
 }
