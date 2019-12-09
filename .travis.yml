@@ -21,6 +21,8 @@ before_script:
 script:
     - make test
 
+#Trying travis for the first time
+
 # notifications:
 #     irc: "irc.freenode.org#dbwebb"
 #     urls:
