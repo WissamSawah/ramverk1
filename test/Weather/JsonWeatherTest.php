@@ -49,12 +49,15 @@ class JsonWeatherTest extends TestCase
         $this->assertInternalType("object", $res);
     }
 
-    // public function testIndexActionPost()
-    // {
-    //     $_POST["ip"] = "3.249.76.98";
-    //     $_POST["time"] = "future";
-    //     $json = $this->controller->indexActionPost();
-    //     $exp = '{ "ip": "3.249.76.98", "timezone": "Europe\/Dublin", "data": [ { "date": "2019-11-25", "summary": "Mostly Cloudy", "temperature": 54 }';
-    //     $this->assertContains($exp, $json);
-    // }
+    public function testIndexActionPost()
+    {
+        $_POST["ip"] = "3.249.76.98";
+        $_POST["time"] = "future";
+        $json = $this->controller->indexActionPost();
+        $exp = '"Europe\/Dublin"';
+        $this->assertContains($exp, $json);
+    }
+
+
+    
 }
