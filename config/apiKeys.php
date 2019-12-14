@@ -1,5 +1,6 @@
 <?php
 namespace Aisa\Config;
+
 /**
 * Config file for api tokens
 * Currently contains

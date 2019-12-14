@@ -2,7 +2,6 @@
 
 namespace Aisa\Validate;
 
-
 use Anax\Commons\ContainerInjectableInterface;
 use Anax\Commons\ContainerInjectableTrait;
 

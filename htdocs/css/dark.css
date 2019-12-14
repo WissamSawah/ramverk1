@@ -5390,6 +5390,9 @@ hr::after {
   display: block;
   clear: both;
 }
+.book-cover {
+  width: 200px;
+}
 h1 {
   color: #41561F;
 }

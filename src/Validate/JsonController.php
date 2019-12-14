@@ -54,21 +54,21 @@ class JsonController extends ValidateController implements ContainerInjectableIn
      *
      * @return array
      */
-     public function indexActionPost()
-         {
-             $request = $this->di->get("request");
-             $this->ipAddress = $request->getPost("ip");
-             $this->object = new ValidateIP();
-             $json = $this->object->getDetails($this->ipAddress);
-             return json_encode($json, JSON_PRETTY_PRINT);
-         }
+    public function indexActionPost()
+        {
+            $request = $this->di->get("request");
+            $this->ipAddress = $request->getPost("ip");
+            $this->object = new ValidateIP();
+            $json = $this->object->getDetails($this->ipAddress);
+            return json_encode($json, JSON_PRETTY_PRINT);
+        }
 
-     public function apiCheckActionGet()
-     {
-         $request = $this->di->get("request");
-         $this->ipAddress = $request->getGet("ip");
-         $this->object = new ValidateIP();
-         $json = $this->object->getDetails($this->ipAddress);
-         return json_encode($json, JSON_PRETTY_PRINT);
-     }
+    public function apiCheckActionGet()
+    {
+        $request = $this->di->get("request");
+        $this->ipAddress = $request->getGet("ip");
+        $this->object = new ValidateIP();
+        $json = $this->object->getDetails($this->ipAddress);
+        return json_encode($json, JSON_PRETTY_PRINT);
+    }
 }

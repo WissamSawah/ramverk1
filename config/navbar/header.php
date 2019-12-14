@@ -72,6 +72,11 @@ return [
             ],
         ],
         [
+            "text" => "Book",
+            "url" => "book",
+            "title" => "Book databases.",
+        ],
+        [
             "text" => "Om",
             "url" => "om",
             "title" => "Om denna webbplats.",
