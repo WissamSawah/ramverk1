@@ -3,274 +3,308 @@
  * and other regions of the page including route specific styles.
  */
 
-/** ==============================================================
- * Horisontal grid setup 
+/**
+ * Variables
  */
-.inner-wrap {
-    #desinax-vgrid.grid(1100px);
 
-    &.inner-wrap-header {
-        #desinax-vgrid.grid(100%);
-    }
+@bgColorFooter: #475321;
+@borderColor: #699c17;
+@bgColorImg: #78951e;
+@basicColor: #fff;
+@fontColor: #ccc;
+@innerWidth: 1150px;
+/**
+ * General layout
+ */
+
+
+ h1  {
+     border-bottom: 1px solid rgb(101,94,101);
+ }
+
+
+
+ //  /* Hide responsive/mobile menu, leave this to kmom02 */
+ // .rm-desktop ul {
+ //     display: none;
+ // }
+ //
+ // /* Hide responsive/mobile menu, leave this to kmom02 */
+ // .rm-navbar-max {
+ //     display: none;
+ // }
+
+
+
+.inner-wrap {
+    margin: 0 auto;
+    max-width: @innerWidth;
+}
+
+//* HEADER wrap *//
+
+.outer-wrap-header {
+    height: auto;
+}
+
+.inner-wrap-header {
+    max-width: 100%;
+}
+
+//* Main wrap *//
+
+.inner-wrap-main {
+    padding-bottom: 14em;
 }
 
 .row {
-    #desinax-vgrid.row();
+    display: block;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+//* Navbar *//
+
+.rm-navbar {
+    font-size: 2.4em;
+    max-width: 100%;
+    position: relative;
+}
+
+.rm-mobile li {
+    position: relative;
+}
+
+.rm-navbar a:hover {
+    border-bottom: 2px solid @borderColor;
+}
+
+.rm-desktop li a {
+    color: inherit;
+    background-color: inherit;
+    display: inherit;
+    font-size: 20px;
+    margin: 20px;
+    text-decoration: none;
+    color: inherit;
+    max-width: 100%;
+}
+
+.rm-navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.rm-navbar-max {
+    font-size: 20px;
+}
+
+.rm-desktop li {
+    position: relative;
+    display: inline;
+}
+
+.next-previous .next {
+    float: right;
+    text-align: right;
+}
+
+//* Wrap Sidebars *//
+.wrap-sidebar .block h4 {
+    border-top: 1px solid @fontColor;
+    background-image: linear-gradient(to right,@basicColor,@bgColorImg);
 }
 
 
+//* Images *//
 
-/** ==============================================================
- * Header 
- */
-/*
-.site-header {
 
-}*/
-
-@colorAccentHeader1:  #3B440D;
-@colorAccentHeader2:  #9FB129;
-@fontFamilySiteLogo:  @fontFamilyTimesNewRoman;
-
-.logo-1 {
-    top: 55px;
-    left: 0;
+.right {
+    float: right;
 }
 
-.site-logo-text {
-    font-family: @fontFamilySiteLogo;
-}
-
-.profile {
-     text-align: right;
-
-     .profile-phpbb {
-         font-size: 2em;
-         line-height: 0;
-         position: absolute;
-         top: 21px;
-         right: 60px;
-     }
-
-    .ucp,
-    .login {
-        a {
-            color: @colorAccentHeader1;
-
-            &:hover {
-                color: @colorAccentHeader2;
-            }
-        }
-
-        .icon {
-            position: relative;
-            top: -12px;
-        }
-    }
-
-    .gravatar {
-        img {
-            border-radius: 50%;
-            vertical-align: -8px;
-        }
-
-        a:hover img {
-            opacity: 0.7;
-        }
-    }
-
-    .logout {
-        display: none;
-    }
-
-    .login {
-        .text {
-            display: none;
-        }
-    }
+.right img {
+    max-width: 100%;
+    border-radius: 20px;
+    padding: 7px;
+    background-color: @bgColorImg;
 }
 
 
-
-/** --------------------------------------------------------------
- * Navbar(s)
- */
-@import "layout/responsive-menu.less";
-
-/*
-.navbar1 {
-    #desinax-vgrid.column(@columns);
+.right:hover {
+    transform: scale(1.03);
+    opacity: 1;
+    transition: 0.5s ease;
 }
 
-.navbar2 {
-
-}
-*/
-
-
-
-/** --------------------------------------------------------------
- * Breadcrumb
- */
-.breadcrumb-wrap {
-    #desinax-vgrid.column(@columns);
+figure.figure.left {
+    float: left;
+    margin: 0 auto;
+    max-width: 100%;
 }
 
-
-
-/** --------------------------------------------------------------
- * Flash area
- */
-.flash-wrap {
-    #desinax-vgrid.column(@columns);
+div.outer-wrap.outer-wrap-flash {
+    max-width: 100%;
+    height: auto;
+    clear: both;
 }
 
-
-
-/** --------------------------------------------------------------
-* Columns above and below main
-*/
-#desinax-vgrid.columns-above,
-#desinax-vgrid.columns-below {
-
+iframe {
+    max-width: 100%;
+    padding: 7px;
+    background-color: @bgColorImg;
 }
 
+//* Logos and logo text *//
 
-
-/** --------------------------------------------------------------
- * General column elements.
- */
-#desinax-vgrid.columns {
-    //.clearfix();
-    //overflow: auto;
+.site-logo-text-icon img {
+    width: 50px;
 }
 
-.col2 {
-    #desinax-vgrid.column(@columns / 2);
+.site-logo-text a {
+    text-decoration: none;
+    font-size: 30px;
+    transition: all .2s linear;
 }
 
-.col3 {
-    #desinax-vgrid.column(@columns / 3);
+.site-logo-text a:hover {
+    text-shadow:  2px 2px #cf4141;
 }
 
-.col4 {
-    #desinax-vgrid.column(@columns / 4);
-}
-
-#desinax-vgrid.column {
-    height: 100%;
-}
-
-.columns {
-    .clearfix();
+.site-logo {
+    display: none;
 }
 
 
+//* Redovisning Innehåll meny*//
 
-/** ==============================================================
- * The main content area.
- *
- */
-/*
-.outer-wrap-main {
 
+.block.toc a {
+    display: block;
+    padding: 12px 24px;
+    color: inherit;
+    border: 1px solid @fontColor;
+    max-width: 100%;
 }
 
-.inner-wrap-main {
-
-}*/
-
-.main {
-    #desinax-vgrid.column(@columns * 3 / 4 - 2);
-    #desinax-vgrid.push(2);
-
-    &.has-sidebar-left {
-        #desinax-vgrid.column(@columns * 3 / 4 - 2);
-        #desinax-vgrid.push(1);
-    }
-
-    &.has-sidebar-right {
-        #desinax-vgrid.column(@columns * 3 / 4 - 2);
-        #desinax-vgrid.push(0);
-    }
-
-    &.has-sidebar-left.has-sidebar-right {
-        #desinax-vgrid.column(@columns * 2 / 4 + 2);
-        #desinax-vgrid.push(0);
-    }
+.block.toc .toc li.selected {
+    background-color: #87c81e;
+    color: @basicColor;
 }
 
-.sidebar-right,
-.sidebar-left {
-    #desinax-vgrid.column(@columns / 4 + 1);
+.block.toc h4 {
+    margin-top: 0;
+    text-align: center;
 }
 
-.sidebar-right {
-    #desinax-vgrid.push(1);
+form.stylechooser,
+fieldset {
+    max-width: 100%;
 }
 
-@media screen and (max-width: 650px) {
 
-    .main {
-        min-height: initial;
-        
-        #desinax-vgrid.column(@columns);
-        #desinax-vgrid.push(0);
+//* Styleväljare flash meddelande *//
 
-        &.has-sidebar-left {
-            #desinax-vgrid.column(@columns);
-            #desinax-vgrid.push(0);
-        }
+.info {
+    border: 2px solid #92cae4;
+    color: #205791;
+    background: #d5edf8;
+    margin-top: 16px;
+    font-size: 23px;
+    margin-left: 0px;
+}
 
-        &.has-sidebar-right {
-            #desinax-vgrid.column(@columns);
-            #desinax-vgrid.push(0);
-        }
+.info p {
+    margin: 0 auto;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
 
-        &.has-sidebar-left.has-sidebar-right {
-            #desinax-vgrid.column(@columns);
-            #desinax-vgrid.push(0);
+.warning {
+    border: 2px solid #d1d12e;
+    color: #3f3f0e;
+    background: #ededab;
+}
+
+
+//* Byline *//
+
+.author-byline {
+    border: 1px solid @fontColor;
+    padding: 1em;
+    width: 31em;
+    height: 9em;
+    position: relative;
+    max-width: 100%;
+    @media screen and (max-width: 800px) {
+
+        &.author-byline {
+            height: 15em;
         }
     }
-
-    .sidebar-right,
-    .sidebar-left {
-        display: none;
-    }
-
-    .col3 {
-        #desinax-vgrid.column(@columns);
-    }
-
-    .col4 {
-        #desinax-vgrid.column(@columns / 2);
-    }
 }
 
 
+.author-byline:hover {
+    transform: scale(1.03);
+    opacity: 1;
+    transition: 0.5s ease;
+    box-shadow: 2px 2px 2px #87c81e;
+}
 
-/** ==============================================================
- * The footer area.
- *
- */
-.site-footer {
-    #desinax-vgrid.column(@columns);
+.author-byline p {
+    margin: 3px auto;
 }
 
 
+//* Footer and Footer columns *//
 
-/** --------------------------------------------------------------
- * The footer column area.
- */
-.footer-column-wrapper {
-    .clearfix();
-}
-
-.footer-column {
-    #desinax-vgrid.column(@columns / 3);
+.footer-column-x {
+    padding-bottom: 24px;
+    padding-right: 1em;
+    clear: both;
 }
 
 .footer-column,
 .footer-column-x {
     height: 100%;
+}
+
+.footer-column {
+    display: inline;
+    float: left;
+    width: 32%;
+    margin-left: 0.8%;
+    margin-right: 0.5%;
+    text-align: center;
+}
+
+.footer-column-1,
+.footer-column-2 {
+    border-right: 1px solid #666;
+}
+
+.outer-wrap-footer {
+    background-color: @bgColorFooter;
+    padding-top: 2px;
+    padding-bottom: 395px;
+    clear: both;
+    height: 200px;
+}
+
+.footer-column-wrapper {
+    color: @fontColor;
+    padding-bottom: 195px;
+    border-bottom: 1px solid #666;
+}
+
+.site-footer {
+    color: @fontColor;
+    text-align: center;
+    padding-top: 25px;
 }

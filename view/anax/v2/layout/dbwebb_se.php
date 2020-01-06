@@ -144,7 +144,7 @@ $route = "route-" . str_replace("/", "-", $di->get("request")->getRoute());
 
 <!-- flash -->
 <?php if (regionHasContent("flash")) : ?>
-<div class="outer-wrap outer-wrap-flash">
+<!-- <div class="outer-wrap outer-wrap-flash"> -->
     <div class="inner-wrap inner-wrap-flash">
         <div class="row">
             <div class="region-flash">

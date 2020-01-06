@@ -1,3 +1,1 @@
-#### Om Webbplatsen
-
-webbplatsen är skapad i PHP, CSS och ramverket Anax.
+![Logo](img/main-logo.png){class=hello}

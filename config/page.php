@@ -14,11 +14,11 @@ return [
         "data" => [
             "baseTitle" => " | ramverk1",
             "bodyClass" => null,
-            "favicon" => "favicon.ico",
+            "favicon" => "mo.png",
             "htmlClass" => null,
             "lang" => "sv",
             "stylesheets" => [
-                "css/dark.min.css",
+                "css/main-proj.min.css",
             ],
             "javascripts" => [
                 "js/responsive-menu.js",
@@ -33,7 +33,7 @@ return [
             "template" => "anax/v2/header/site_logo",
             "data" => [
                 "class" => "large",
-                "siteLogo"      => "image/theme/leaf_256x256.png",
+                "siteLogo"      => "image/theme/mo.png",
                 "siteLogoAlt"   => "Löv",
             ],
         ],
@@ -42,8 +42,8 @@ return [
             "template" => "anax/v2/header/site_logo_text",
             "data" => [
                 "homeLink"      => "",
-                "siteLogoText"  => "ramverk1",
-                "siteLogoTextIcon" => "image/theme/leaf_40x40.png",
+                "siteLogoText"  => "",
+                "siteLogoTextIcon" => "image/theme/main-logo.png",
                 "siteLogoTextIconAlt" => "Löv-bild",
             ],
         ],

@@ -76,10 +76,6 @@
         background-image: url("@{gridImage}");
     }
 
-    .showGridAlt(@gridColor: #f4e3d7) {
-        background-image: repeating-linear-gradient(to bottom, transparent 0px, transparent (@magicNumber - 1), @gridColor (@magicNumber - 1), @gridColor @magicNumber);
-    }
-
     .font(@fontSize: 100.01%, @fontFamily: @fontFamilyBody) {
         font: @fontSize/unit((@magicNumber / @fontSizeBody)) @fontFamily;
     }
@@ -198,7 +194,7 @@
      */
     .typographyTextElements() {
         p {
-            margin-bottom: @magicNumber;
+            margin-bottom: 10px;
         }
 
         small,
@@ -334,13 +330,7 @@
             }
         }
 
-        ul {
-            list-style-type: disc;
-        }
-
-        ol {
-            list-style-type: decimal;
-        }
+        
 
         // dl dt dd
         dl {

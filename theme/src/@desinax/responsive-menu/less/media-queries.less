@@ -6,18 +6,105 @@
  /**
   * Example on media queries
   */
- @media screen and (max-width: 680px) {
+ @media screen and (max-width: 1200px) {
      .rm-small {
          display: block;
      }
-     
+
      .rm-desktop {
-         display: none;
+         display: none !important;
+     }
+     .region-header-col-1 {
+         margin-left: 40% !important;
+     }
+
+     .rm-navbar-max {
+         display: inline !important;
      }
  }
 
- @media screen and (min-width: 680px) {
+ // @media screen and (max-width: 680px) {
+ //     .region-header-col-1 {
+ //         // margin-left: 23% !important;
+ //         margin-top: -13% !important;
+ //     }
+ // }
+
+
+ @media screen and (max-width: 680px) {
      .rm-small {
          display: none;
+     }
+
+     .region-sidebar-left {
+         display: none !important;
+     }
+
+     .region-main {
+         float: none !important;
+     }
+
+     .outer-wrap-main {
+        padding-right: 1.0em;
+        padding-left: 0.5em !important;
+     }
+
+     .region-header-col-1 {
+         // margin-left: 23% !important;
+         margin-top: -11% !important;
+     }
+     // .outer-wrap-header {
+     //     display: none !important;
+     // }
+
+
+     .region-flash img {
+         height: 200px;
+     }
+
+     .start, .start2 {
+         font-size: 17px !important;
+     }
+
+     .start {
+         margin-top: -12em !important;
+     }
+
+     h1, h3 {
+         font-size: 1.5em !important;
+     }
+
+
+     i.fas.fa-quote-left, i.fas.fa-quote-right {
+         font-size: 20px !important;
+     }
+
+
+     .form {
+         margin-left: 0px !important;
+         float: none !important;
+     }
+ }
+
+
+
+
+ @media screen and (max-width: 890px) {
+     // .col {
+     //     float: none !important;
+     // }
+
+     .footer-column {
+         float: none !important;
+     }
+
+ }
+
+ @media screen and (max-width: 1050px) {
+     .h1-index {
+         font-size: 30px !important;
+         // bottom: 3em !important;
+         left: 50% !important;
+         line-height: normal !important;
      }
  }
